@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mail sidebar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="mailsidebar.js" defer></script>
+</head>
+
+<body>
+    <div class="mailSidebar">
+        <div class="mailSidebar_logo">
+            <button text="Mail App" class="mailSidebar_logo_button">
+                <img src="burger-menu.svg" class="mailSidebar_logo_hamburgerMStyle"/>
+                <div class="mailSidebar_logo_logoStyles">📬</div>
+                <h2>Mail App</h2>
+            </button>
+        </div>
+        <div class="mailSidebar_compose">
+            <div class="mailSidebar_compose_container">
+                <button class="mailSidebar_compose_button">
+                    <div class="mailSidebar_compose_icon">🖊️</div>
+                    <h2>Compose</h2>
+                </button>
+            </div>
+        </div>
+        <div class="mailSidebar_mailboxes">
+            <app-sidebar-button text="Inbox">
+                <slot slot="icon" class="mailSidebar_button_icon">📥</slot>
+            </app-sidebar-button>
+            <app-sidebar-button text="Starred">
+                <slot slot="icon">⭐️</slot>
+            </app-sidebar-button>
+            <app-sidebar-button text="Snoozed">
+                <slot slot="icon">⏱</slot>
+            </app-sidebar-button>
+            <app-sidebar-button text="Sent">
+                <slot slot="icon">➡️</slot>
+            </app-sidebar-button>
+            <app-sidebar-button text="Drafts" unreadCount="1">
+                <slot slot="icon">📄</slot>
+            </app-sidebar-button>
+        </div>
+    </div>
+    
+</body>
+
+</html>
