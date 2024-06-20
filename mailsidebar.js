@@ -1,10 +1,7 @@
 const appSidebarButtonTemplate = document.createElement("template");
 appSidebarButtonTemplate.innerHTML = `
 <style>
-.mailSidebar_mailboxes_container {
-    width: 100%
-}
-.mailSidebar_mailboxes_button {
+.mailSidebar__mailbox__button {
     width: 100%;
     padding: 0px 0px 0px 10px;
     background-color: #fff;
@@ -13,36 +10,36 @@ appSidebarButtonTemplate.innerHTML = `
     font-size: 1.2rem;
 }
 
-.mailSidebar_mailboxes_button_div, .mailSidebar_mailboxes_button {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 10px;
-    padding-right: 30px;
-}
+    .mailSidebar__mailbox__button__div, .mailSidebar__mailbox__button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 10px;
+        padding-right: 30px;
+    }
 
-.mailSidebar_mailboxes_button active {
-    background-color: #D6E2FB;
-}
+    .mailSidebar__mailbox__button__heading {
+        padding-left: 10px;
+    }
 
-.active {
-    background-color: #D6E2FB;
-}
+        .mailSidebar__mailbox__button active {
+            background-color: #D6E2FB;
+        }
 
-.mailSidebar_mailboxes_button:hover {
-    background-color: #e3e3e3;
-    cursor: pointer;
-}
-
-.mailSidebar_mailboxes_button_heading {
-    padding-left: 10px;
-}
+        .mailSidebar__mailbox__button:hover {
+            background-color: #e3e3e3;
+            cursor: pointer;
+        }
+        
+        .active {
+            background-color: #D6E2FB;
+        }
 </style>
-<button id="" class="mailSidebar_mailboxes_button">
-    <div class="mailSidebar_mailboxes_button_div">
+<button class="mailSidebar__mailbox__button">
+    <div class="mailSidebar__mailbox__button__div">
         <slot name="icon"></slot>
-        <h4 class="mailSidebar_mailboxes_button_heading"></h4>
+        <h4 class="mailSidebar__mailbox__button__heading"></h4>
     </div>
     <p></p>
 </button>
@@ -65,7 +62,7 @@ class AppSidebarButton extends HTMLElement {
         const unreadCount = this.getAttribute("unreadCount");
         this.shadowRoot.querySelector("p").innerText = unreadCount;
 
-        const activeItem = this.shadowRoot.querySelector(".mailSidebar_mailboxes_button");
+        const activeItem = this.shadowRoot.querySelector(".mailSidebar__mailbox__button");
         activeItem.addEventListener("click", () => this.handleActiveMenuItem());
     }
 
@@ -75,11 +72,11 @@ class AppSidebarButton extends HTMLElement {
     }
 
     handleActiveMenuItem() {
-        console.log(this.shadowRoot.querySelector(".mailSidebar_mailboxes_button"));
+        console.log(this.shadowRoot.querySelector(".mailSidebar__mailbox__button"));
         this.isSidebarActive = !this.isSidebarActive;
 
-        const buttonActive = this.shadowRoot.querySelector(".mailSidebar_mailboxes_button");
-        console.log(this.shadowRoot.querySelector(".mailSidebar_mailboxes_button"));
+        const buttonActive = this.shadowRoot.querySelector(".mailSidebar__mailbox__button");
+        console.log(this.shadowRoot.querySelector(".mailSidebar__mailbox__button"));
         if (this.isSidebarActive) {
             buttonActive.classList.add('active');
         } else {

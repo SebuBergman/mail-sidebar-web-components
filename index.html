@@ -9,24 +9,24 @@
 
 <body>
     <div class="mailSidebar">
-        <div class="mailSidebar_logo">
-            <button text="Mail App" class="mailSidebar_logo_button">
-                <img src="burger-menu.svg" class="mailSidebar_logo_hamburgerMStyle"/>
-                <div class="mailSidebar_logo_logoStyles">📬</div>
+        <div class="mailSidebar__logo">
+            <button text="Mail App" class="mailSidebar__logo__button">
+                <img src="burger-menu.svg" class="mailSidebar__logo__hamburgerStyle"/>
+                <div class="mailSidebar__logo__logoStyles">📬</div>
                 <h2>Mail App</h2>
             </button>
         </div>
-        <div class="mailSidebar_compose">
-            <div class="mailSidebar_compose_container">
-                <button class="mailSidebar_compose_button">
-                    <div class="mailSidebar_compose_icon">🖊️</div>
+        <div class="mailSidebar__compose">
+            <div class="mailSidebar__compose__container">
+                <button class="mailSidebar__compose__button">
+                    <div class="mailSidebar__compose__icon">🖊️</div>
                     <h2>Compose</h2>
                 </button>
             </div>
         </div>
-        <div class="mailSidebar_mailboxes">
+        <div class="mailSidebar__mailboxes">
             <app-sidebar-button text="Inbox">
-                <slot slot="icon" class="mailSidebar_button_icon">📥</slot>
+                <slot slot="icon">📥</slot>
             </app-sidebar-button>
             <app-sidebar-button text="Starred">
                 <slot slot="icon">⭐️</slot>
